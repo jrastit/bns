@@ -1,0 +1,459 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+body {
+  font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  color: white;
+  background-color: black;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+
+  margin: 0 0 35px;
+
+  letter-spacing: 1px;
+  /* text-transform: uppercase; */
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+
+  margin: 0 0 25px;
+  @media(min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin: 0 0 35px;
+  }
+}
+
+a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  color: $primary;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+
+    color: darken($primary, 20%);
+  }
+}
+
+#mainNav {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  margin-bottom: 0;
+
+  /* text-transform: uppercase; */
+
+  border-bottom: 1px solid fade-out(white, .7);
+  background-color: black;
+  .navbar-toggler {
+    font-size: 14px;
+
+    padding: 11px;
+
+    color: white;
+    border: 1px solid white;
+  }
+  .navbar-brand {
+    font-weight: 700;
+  }
+  a {
+    color: white;
+    
+  }
+  .navbar-nav {
+    .nav-item {
+      text-transform: uppercase;
+      -webkit-transition: background 0.3s ease-in-out;
+      -moz-transition: background 0.3s ease-in-out;
+      transition: background 0.3s ease-in-out;
+      &:hover {
+        color: fade(white, 80%);
+        outline: none;
+        background-color: transparent;
+      }
+      &:active,
+      &:focus {
+        outline: none;
+        background-color: transparent;
+      }
+    }
+  }
+  @media(min-width:992px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    letter-spacing: 1px;
+
+    border-bottom: none;
+    background: transparent;
+    &.navbar-shrink {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid fade-out(white, .7);
+      background: black;
+    }
+    .nav-link.active {
+      outline: none;
+      background-color: rgba(white, .3);
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.my-center {
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+
+  
+  @media(min-width:768px) {
+    height: 100%;
+    padding: 0;
+  }
+
+}
+
+.my-center > div {
+  display: table-cell;
+
+  vertical-align: middle;
+  .brand-heading {
+    font-size: 50px;
+  }
+}
+  
+
+.masthead {
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+
+  color: white;
+  /* background: url('../img/nice_desk_egg.jpg') no-repeat bottom center scroll; */
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .intro-body {
+    display: table-cell;
+
+    vertical-align: middle;
+    .brand-heading {
+      font-size: 50px;
+    }
+    .intro-text {
+      font-size: 18px;
+    }
+  }
+  @media(min-width:768px) {
+    height: 100%;
+    padding: 0;
+    .intro-body {
+      .brand-heading {
+        font-size: 100px;
+      }
+      .intro-text {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.btn-circle-black{
+  font-size: 26px;
+
+  width: 55px;
+  height: 55px;
+  margin-top: 15px;
+  line-height: 45px;
+
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+
+  color: #6D2E84;
+  border: 2px solid #6D2E84;
+  border-radius: 100% !important;
+  background: transparent;
+  &:focus,
+  &:hover {
+    color: #6D2E84;
+    outline: none;
+    background: fade-out(black, .9);
+  }
+}
+
+.btn-circle {
+  font-size: 26px;
+
+  width: 55px;
+  height: 55px;
+  margin-top: 15px;
+  line-height: 45px;
+
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+
+  color: white;
+  border: 2px solid white;
+  border-radius: 100% !important;
+  background: transparent;
+  &:focus,
+  &:hover {
+    color: white;
+    outline: none;
+    background: fade-out(white, .9);
+  }
+}
+
+.content-section {
+  min-height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.white-section {
+	color:black;
+  background-color:white;	
+}
+
+.pow-section {
+  /* background: url('../img/lerone-pieters-1294592-unsplash.jpg') no-repeat center center scroll; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+}
+
+.poh-section {
+  /* background: url('../img/edward-koorey-761475-unsplash.jpg') no-repeat center center scroll; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.benefit-section {
+  /* background: url('../img/edward-koorey-23413-unsplash.jpg') no-repeat center center scroll; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*
+.benefit2-section {
+  background: url('../img/edward-koorey-767847-unsplash.jpg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;	
+}
+*/
+
+.issue-section {
+  /* background: url('../img/lerone-pieters-1240438-unsplash.jpg') no-repeat center center scroll; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+}
+
+/*
+.issue2-section {
+  background: url('../img/lerone-pieters-1294590-unsplash.jpg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+}
+*/
+
+#map {
+  width: 100%;
+  height: 300px;
+}
+@media(min-width:992px) {
+  .content-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  #map {
+    height: 350px;
+  }
+}
+
+.btn {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+
+  border-radius: 0;
+}
+
+.btn-default {
+  color: $primary;
+  border: 1px solid $primary;
+  background-color: transparent;
+  &:focus,
+  &:hover {
+    color: black;
+    border: 1px solid $primary;
+    outline: none;
+    background-color: $primary;
+  }
+}
+
+ul.banner-social-buttons {
+  margin-top: 0;
+  @media(max-width: 1199px) {
+    margin-top: 15px;
+  }
+  @media(max-width:767px) {
+    li {
+      display: block;
+
+      margin-bottom: 20px;
+      padding: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+footer {
+  padding: 50px 0;
+  p {
+    font-size: 14px;
+
+    margin: 0;
+  }
+}
+
+::-moz-selection {
+  background: #fcfcfc;
+  background: fade-out(white, .8);
+  text-shadow: none;
+}
+
+::selection {
+  background: #fcfcfc;
+  background: fade-out(white, .8);
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+.icon-small
+{
+  height:18px;
+  margin:0;
+	padding:0;
+}
+
+.icon-medium
+{
+  height:22px;
+	margin:0;
+	padding:0;
+}
+
+.benefit-icon
+{
+  color:#6D2E84;
+}
+
+.product-icon
+{
+  font-size:4em;
+  margin:0;
+  padding:0;
+}
+
+.number-round
+{
+  border:.25em solid #6D2E84;
+  font-size:3em;
+  min-height:4.5em;
+  min-width:4.5em;
+  display:table;
+  margin: auto;
+  margin-bottom: 1em;
+  
+}
+
+.number-round-cell
+{
+  color:white;
+  display:table-cell;
+  vertical-align: middle;
+}
+
+@media(min-width:992px) {
+  .add-padding
+  {
+    padding-left:3em;
+    padding-right:3em;
+  }
+}
+
+.table-dark th{
+  border-color: #dee2e6;
+}
+
+
+@import 'cookiealert.scss';
