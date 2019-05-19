@@ -54,10 +54,9 @@
 
     <!-- Solidity Ethereum script -->
     <script src="node_modules/web3/dist/web3.js"></script>
+
     <script src="solidity_script.js"></script>
     
-    
-
   </head>
 
   <body id="page-top">
@@ -164,6 +163,60 @@ if (isset($_POST["register_keyword"]) && isset($_POST["register_host"]) && isset
                 <input type="submit" class="btn btn-primary btn-sm" value="Add">
               </form>
               <br />
+              <br />
+            </div>
+          </div>
+				</div>
+      </div>
+    </header>
+<?php
+
+}else if ($url == "/wire.php"){
+?>
+<!-- Intro Header -->
+    <header class="masthead">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <!-- <h1 class="brand-heading"><img src="/img/logo_bns_200x100.png" class="img-fluid" alt="BNS"></h1> -->
+              <!-- <h1 class="brand-heading"><?php t('intro', 'tittle') ?></h1> -->
+	            <p class="intro-text"><?php t('register', 'baseline') ?></p>
+              <p data-meaningful="true"><?php t('register', 'description') ?></p>
+              
+              
+              <button id="verifyButton">Verify with Wyre!</button>
+
+              <!-- Install the Wyre Loader -->
+              <script src="https://verify.sendwyre.com/js/widget-loader.js"></script>
+              <script>
+              // configure the widget for metamask authentication
+      var widget = new Wyre.Widget({
+        env: "test",
+        accountId: "YOUR_WYRE_ACCOUNT_ID",
+        auth: { type: "metamask" },
+        operation: {
+          type: "debitcard",
+          dest: "ethereum:0x98B031783d0efb1E65C4072C6576BaCa0736A912",
+          sourceCurrency: "USD",
+          destCurrency: "ETH",
+          destAmount: 0.03
+        }
+      });
+
+      // open the widget when the user presses the button
+      document
+        .getElementById("verifyButton")
+        .addEventListener("click", function(e) {
+          widget.open();
+        });
+     
+      //add events here
+      widget.on('complete', function(event) {
+        console.log(event);
+      });
+    </script>
+    <br />
               <br />
             </div>
           </div>

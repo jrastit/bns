@@ -6,6 +6,10 @@ $t['menu']['index']['fr']="Acceuil";
 $t['menu']['index']['en']="Home";
 $t['menu']['register']['fr']="Enregistrement";
 $t['menu']['register']['en']="Register";
+
+$t['menu']['wire']['fr']="Payement";
+$t['menu']['wire']['en']="Billing";
+
 $t['menu']['about']['fr']="A propos";
 $t['menu']['about']['en']="About";
 
@@ -28,6 +32,12 @@ $t['register']['baseline']['en']="Blockchain Name Service Register";
 
 $t['register']['description']['fr']="Ajouter un enregistrements sur Ethereum";
 $t['register']['description']['en']="Add a records on Ethereum";
+
+$t['wire']['baseline']['fr']="Blockchain Name Service Payment";
+$t['wire']['baseline']['en']="Blockchain Name Service Payment";
+
+$t['wire']['description']['fr']="Recuperer du Gaz pour apparaitre avec votre mot clef";
+$t['wire']['description']['en']="Get some Gaz to be seen with your keyword";
 
 $t['about']['baseline']['fr']="Blockchain Name Service A propos";
 $t['about']['baseline']['en']="Blockchain Name Service About";
