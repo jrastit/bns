@@ -6,9 +6,9 @@ if (typeof web3 !== "undefined")
 else 
 {
  // set the provider you want from Web3.providers
-//web3.setProvider(new web3.providers.HttpProvider("https://rinkeby.infura.io/v3/33b80c3a509e419d8cb3abe52dfb7710"));
+	web3.setProvider(new web3.providers.HttpProvider("https://rinkeby.infura.io/v3/33b80c3a509e419d8cb3abe52dfb7710"));
 //web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-web3 = new Web3(new Web3.providers.HttpProvider("http://157.230.154.5:8178"));
+//web3 = new Web3(new Web3.providers.HttpProvider("http://157.230.154.5:8178"));
  }
 /*
 var Web3 = require("web3");
@@ -140,7 +140,8 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 
 var bnsContract = web3.eth.contract(bnsABI);
 
-var bnsContractInstance = bnsContract.at("0x92604a186de35d9c1331596ee8d32c59f64a168f");
+//var bnsContractInstance = bnsContract.at("0x92604a186de35d9c1331596ee8d32c59f64a168f");
+var bnsContractInstance = bnsContract.at("0x3416f353e1346e2a82538d5ffe60f5c479f2284d");
 
 //bnsContract.web3.eth.defaultAccount=Contractinstance.web3.eth.coinbase;
 
@@ -234,7 +235,8 @@ function get_ip_stack(_keyword){
 				var stack = result[2][i];
 
 				if (dns.endsWith(".ens")){
-					$("#search_result").append("<p style='margin-top:1em;'>" +dns + "</a></p>");
+debugger
+					eth_addr = web3.eth.ens.resolver(dns); 
 				}else{
 					$("#search_result").append("<p style='margin-top:1em;'><a href='https://" + dns + "'>" + dns + "("+ stack + ")</a></p><div onclick=\"location.href='https://" + dns + "';\" id='search_result_" + i + "'></div>");
 					page_info(dns, "#search_result_" + i);
